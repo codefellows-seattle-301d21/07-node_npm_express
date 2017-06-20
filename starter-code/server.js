@@ -15,7 +15,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('./public'));
 
 // TODO: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
-
+app.get('/', function(req, res) {
+  console.log('I accessed the new.HTML page');
+  res.sendFile('./public/new.html');
+});
 
 app.post('/articles', bodyParser, function(request, response) {
   // REVIEW: This route will receive a new article from the form page, new.html,
@@ -27,4 +30,5 @@ app.post('/articles', bodyParser, function(request, response) {
 
 app.listen(PORT, function() {
   // TODO: Log to the console a message that lets you know which port your server has started on
+  console.log('currently listening on PORT: ', PORT);
 });
