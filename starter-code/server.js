@@ -20,6 +20,11 @@ app.get('/'), function(req, res) {
   res.sendFile('./index.html');
 }
 
+app.get('./index.html/'), function(req, res) {
+  res.sendFile('./new.html');
+}
+
+
 app.post('/articles', bodyParser, function(request, response) {
   // REVIEW: This route will receive a new article from the form page, new.html,
   // and log that form data to the console. We will wire this up soon to actually
