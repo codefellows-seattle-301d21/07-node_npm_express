@@ -32,3 +32,7 @@ app.listen(PORT, function() {
   // TODO: Log to the console a message that lets you know which port your server has started on
   console.log('This port is:', PORT);
 });
+
+app.use(function (req, res, next) {
+  res.status(404).send("THIS IS A 404!!!")
+});
