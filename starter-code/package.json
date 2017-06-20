@@ -13,6 +13,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
   "bugs": {
     "url": "https://github.com/matstap/07-node_npm_express/issues"
   },
