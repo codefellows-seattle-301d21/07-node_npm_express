@@ -6,9 +6,13 @@
 // Remember to install express, and be sure that it's been added to your package.json as a dependency
 // There is also a package here called body-parser, which is required in for use in a new route.
 // Be sure to install that and save it as a dependency after you create your package.json.
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser').urlencoded({extended: true});
 const PORT = process.env.PORT || 3000;
 
+
+app.use(express.static('/public'));
 // TODO: Include all of the static resources as an argument to app.use()
 
 // TODO: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
