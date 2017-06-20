@@ -9,10 +9,16 @@
 const bodyParser = require('body-parser').urlencoded({extended: true});
 const PORT = process.env.PORT || 3000;
 const express = require('express');
+const app = express();
 
 // DONE: Include all of the static resources as an argument to app.use()
-app.use(express.static('./starter-code'));
+app.use(express.static('./public'));
 // DONE: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
+
+app.get('/', function(request, response) {
+  response.sendFile('./public/new.html');
+});
+
 app.use(function(err, req, res, next){
   console.error(err.stack);
   res.status(404).send('File NOT Found');
@@ -27,5 +33,7 @@ app.post('/articles', bodyParser, function(request, response) {
 })
 
 app.listen(PORT, function() {
-  // TODO: Log to the console a message that lets you know which port your server has started on
+  // DONE: Log to the console a message that lets you know which port your server has started on
+  console.log('Node server is running on port ', PORT);
+  console.log('Type CTRL + C to stop server.');
 });
