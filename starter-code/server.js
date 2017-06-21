@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000
 // DONE: Include all of the static resources as an argument to app.use()
 app.use(express.static('./public'))
 // TODO: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
-s
+
 
 app.post('/articles', bodyParser, function(request, response) {
   // REVIEW: This route will receive a new article from the form page, new.html,
